@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to EXO Planet</title>
+</head>
+<style>
+    html{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        position: relative;
+    }
+    body{
+        width: 1024px;
+        height: 2100px;
+        background-image: url(backgroundexo.jpg) ;
+        background-size: 270px 270px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 8px;
+        position: relative;
+    }
+    #header{
+        width: 100%;
+        height: 142px;
+        background-color: rgba(0,0,0,0.9);
+    }
+    #header img{
+        width: 42px;
+        height: 142px;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    #navbar{
+        width: 100%;
+        height: 40px;
+        background: rgba(0,0,0,0.9);
+        border: 1px solid white;
+    }
+    #navbar>ul{
+        height: 100%;
+        list-style-type: none;
+        margin: 0px;
+      }
+    #navbar>ul>li{
+        height: 100%;
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding: 0 35px;
+        color: white;
+        position: relative;
+      }
+    #navbar>ul>li>a{
+        color: white;
+        text-decoration: none;
+      }
+    #navbar>ul>li:hover{
+        color: yellow;
+        box-shadow: 0 4px 8px 0 rgba(97, 2, 250, 0.2), 0 6px 20px 0 rgba(41, 4, 252, 0.19);
+        background:blue;
+      }
+    #navbar>ul>li:hover>a{
+        color: yellow;
+      }
+    #navbar>ul>li>ul{
+        list-style-type: none;
+        width: 250px;
+        position: absolute;
+        left: 0;
+        display: none;
+        z-index: 1;
+        background: rgba(0,0,0,0.9);
+      }
+    #navbar>ul>li:hover>ul{
+        display: block;
+        padding: 8px 0;
+      }
+    #navbar>ul>li>ul>li{
+        font: 0.9rem;
+        text-transform: none;
+        font-weight: normal;
+        height: 35px;
+        line-height: 35px;
+        background: rgba(0,0,0,0.9);
+        color: white;
+        text-align: left;
+        padding: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+      }
+    #navbar>ul>li>ul>li:hover{
+        color: yellow;
+        background: rgba(0,0,0,0.9);
+        animation: slide 1s;
+        border: 1px solid white;
+      }
+    #navbar>ul>li>ul>li:hover>a{
+        color: yellow;
+      }
+    #navbar>ul>li>ul>li>a{
+        color: white;
+        text-decoration: none;
+      }
+    @keyframes slide {
+        0%{left: 8px;}
+        20%{left: -6.5px;}
+        40%{left: 5px;}
+        60%{left: -3.5px;}
+        80%{left: 2px;}
+        100%{left: 0.5px;}
+    }
+    #container{
+        width: 100%;
+        height: 1900px;
+        position: relative;
+    }
+    #container .title{
+        width: 100%;
+        height: 67px;
+        text-align: center;
+        color: white;
+        font-size: 3rem;
+        background-color: rgba(0,0,0,0.9);
+        text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        line-height: 67px;
+    }
+    #container .content{
+        width: 1000px;
+        height: 381.625px;
+        break-before: 20px;
+    }
+    #container .content .left-content{
+        height: 100%;
+        width: 470px;
+        padding: 0px 15px;
+        float: left;
+    }
+    #container .content .left-content img{
+        width: 100%;
+        height: 100%;
+    }
+    #container .content .right-content{
+        width: 470px;
+        height: 381.625px;
+        background-color: rgba(0,0,0,0.9);
+        display: block;
+        float: left;
+        padding: 0px 15px;
+    }
+    #container .content .right-content .top-content{
+        width: 100%;
+        height: 162px;
+    }
+    #container .content .right-content .top-content img{
+        width: 62px;
+        height: 162px;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    #container .content .right-content .bottom-content p{
+        color: white;
+    }
+    #container .members{
+        width: 100%;
+        height: 1425.220px;
+        margin-top: 20px;
+        position: relative;
+    }
+    #container .members .hang1 a{
+        display: block;
+        width: 33.33%;
+        float: left;
+        height: 30%;
+        text-align: center;
+        float: left;
+        margin-top: 50px;
+        position: relative;
+        text-decoration: none;
+    }
+    #container .members .hang1 a img{
+        width: 286.33px;
+        height: 400px;
+    }
+    #container .members .hang1 a div{
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        padding: 15px;
+        color: black;
+        background: rgba(253, 253, 253, 0.8);
+        text-align: center;
+        font-size: 2rem;
+    }
+    #container .members .hang1 a:hover div{
+        color: blue;
+    }
+    #container .members .hang2 a{
+        display: block;
+        width: 33.33%;
+        float: left;
+        height: 50%;
+        text-align: center;
+        float: left;
+        margin-top: 50px;
+        text-decoration: none;
+        position: relative;
+    }
+    #container .members .hang2 a img{
+        width: 286.33px;
+        height: 400px;
+    }
+    #container .members .hang2 a div{
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        padding: 15px;
+        color: black;
+        background: rgba(253, 253, 253, 0.8);
+        text-align: center;
+        font-size: 2rem;
+    }
+    #container .members .hang2 a:hover div{
+        color: blue;
+    }
+    #container .members .hang3 a{
+        display: block;
+        width: 33.33%;
+        float: left;
+        height: 50%;
+        text-align: center;
+        float: left;
+        margin-top: 50px;
+        text-decoration: none;
+        position: relative;
+    }
+    #container .members .hang3 a img{
+        width: 286.33px;
+        height: 400px;
+    }
+    #container .members .hang3 a div{
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        padding: 15px;
+        color: black;
+        background: rgba(253, 253, 253, 0.8);
+        text-align: center;
+        font-size: 2rem;
+    }
+    #container .members .hang3 a:hover div{
+        color: blue;
+    }
+    #footer{
+        width: 1024px;
+        height: 200px;
+        background: rgba(0,0,0,0.9);
+    }
+    #footer .slogan{
+        width: 100%;
+        height: 100px;
+        color: white;
+        text-align: center;
+        list-style: 100px;
+        font-size: 6rem;
+    }
+    #footer .followus{
+        width: 100%;
+        height: 100px;
+        text-align: center;
+    }
+    #footer .followus .fa {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 20px;
+        width: 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+    }
+    #footer .followus .fa:hover {
+        opacity: 0.7;
+    }
+    #footer .followus .fa-facebook {
+        background: #3B5998;
+        color: white; 
+    }
+    #footer .followus .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+    #footer .followus .fa-youtube {
+        background: #bb0000;
+        color: white;
+    }
+    #footer .followus .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+    #footer .followus p{
+        text-align: center;
+        color: white;
+        font-size: 1.3rem;
+    }
+</style>
+<body>
+    <div id="header">
+        <img src="exoloveshot.png" alt="">
+    </div>
+    <div id="navbar">
+        <ul>
+            <li><a href="https://vi.wikipedia.org/wiki/EXO_(nh%C3%B3m_nh%E1%BA%A1c)">About us</a></li>
+            <li>Sub-Units
+                <ul>
+                    <li><a href="https://vi.wikipedia.org/wiki/EXO-CBX">EXO-CBX</a></li>
+                    <li><a href="https://vi.wikipedia.org/wiki/EXO-SC">EXO-SC</a></li>
+                </ul>
+            </li>
+            <li>Solo
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=8M3WUaeIbOk">Baekhyun</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=JrOrlhjIYVk">Chen</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=Fc-fa6cAe2c">Kai</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=_btxV8tJM7w">D.O.</a></li>
+                </ul>
+            </li>
+            <li>Albums
+                <ul>
+                    <li><a href="https://www.google.com/search?rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvKE6ysm0uCAtvbJptN7LHSnGWhkSw:1634826666000&q=EXO+Obsession&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-LVT9c3NMxIM6woLqu00BLPTrbSzy0tzkzWTywqySwusUrMSSrNLX7E6MQt8PLHPWEpy0lrTl5jNObCpVJIgovNNa8ks6RSiE-KhwvJLp5FrLyuEf4K_knFqcXFmfl5E9gYAd1z342OAAAA&sa=X&ved=2ahUKEwisr8j129vzAhXTc94KHafzCToQ-BZ6BAgBEEA&tbs=kac:1,kac_so:0">OBSESSION</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+Don%27t+Mess+Up+My+Tempo&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-LVT9c3NExLMUtJiU-J1xLPTrbSzy0tzkzWTywqySwusUrMSSrNLX7E6MQt8PLHPWEpy0lrTl5jNObCpVJIgovNNa8ks6RSiE-KhwvJLp5FrFKuEf4KLvl56iUKvqnFxQqhBQq-lQohqbkF-RPYGAHwdd6kmwAAAA&lei=xnlxYb7iENnn-QaV0LyYBA">DON’T MESS UP MY TEMPO</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+The+War&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-LVT9c3NEyJTzGuLDYz0BLPTrbSzy0tzkzWTywqySwusUrMSSrNLX7E6MQt8PLHPWEpy0lrTl5jNObCpVJIgovNNa8ks6RSiE-KhwvJLp5FrNyuEf4KIRmpCuGJRRPYGAH64d5QjAAAAA&lei=wXlxYe2CO9qgoATMq664Aw">THE WAR</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+Don%27t+Fight+the+Feeling&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-LVT9c3NCw0Mi4zNCky0hLPTrbSzy0tzkzWTywqySwusUrMSSrNLX7E6MQt8PLHPWEpy0lrTl5jNObCpVJIgovNNa8ks6RSiE-KhwvJLp5FrNKuEf4KLvl56iUKbpnpGSUKJRmpCm6pqTmZeekT2BgBlFOysZwAAAA&lei=13lxYbORIIWmoAT6n7DoBQ">DON’T FIGHT THE FEELING</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+Ex%27Act&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-LVT9c3NEyqjE8pNDM30xLPTrbSzy0tzkzWTywqySwusUrMSSrNLX7E6MQt8PLHPWEpy0lrTl5jNObCpVJIgovNNa8ks6RSiE-KhwvJLp5FrFyuEf4KrhXqjsklE9gYAbB9WqOLAAAA&lei=5nlxYfbdN9LM-Qb0_qyABA">EX’ACT</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+Exodus&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xU-IGsQ2NjZJNC_K0xLOTrfRzS4szk_UTi0oyi0usEnOSSnOLHzE6cQu8_HFPWMpy0pqT1xiNuXCpFJLgYnPNK8ksqRTik-LhQrKJZxErl2uEv4JrRX5KafEENkYA0UQjrYkAAAA&lei=xnlxYb7iENnn-QaV0LyYBA">EXODUS</a></li>
+                    <li><a href="https://www.google.com/search?sa=X&rlz=1C1CHBF_enVN937VN937&sxsrf=AOaemvLRGRrUXF7K4H5EYHTiVrkDQJo-qw:1634826668939&q=EXO+XOXO&stick=H4sIAAAAAAAAAONgFuLSz9U3yIhPyU4xUwKzywqSzCsrtMSzk630c0uLM5P1E4tKMotLrBJzkkpzix8xOnELvPxxT1jKctKak9cYjblwqRSS4GJzzSvJLKkU4pPi4UKyiGcRK4drhL9ChH-E_wQ2RgDYkzFZhgAAAA&lei=IHpxYYONHtPr-QbTsaLQAg">XOXO</a></li>
+                </ul>
+            </li>
+            <li>Concerts
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=u7ewPfUX8uE">EXO PLANET#1</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=y5wb19-2UrA">EXO PLANET#2</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=gneX7Gm15Ck">EXO PLANET#3</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=W2ifkY9D9V8">EXO PLANET#4</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=fZDr8_WYX7I">EXO PLANET#5</a></li>
+                </ul>
+            </li>
+            <li><a href="file:///E:/VS%20code/Thi%E1%BA%BFt%20k%E1%BA%BF%20v%C3%A0%20l%E1%BA%ADp%20tr%C3%ACnh%20web/Th%E1%BB%B1c%20h%C3%A0nh/EXOawards.html">Awards</a></li>
+        </ul>
+    </div>
+    <div id="container">
+        <div class="title">PROFILE</div>
+        <div class="content">
+            <div class="left-content">
+                <img src="exoot92.jpg" alt="">
+            </div>
+            <div class="right-content">
+                <div class="top-content">
+                    <img src="exologo.png" alt="">
+                </div>
+                <div class="bottom-content">
+                    <p>Một nhóm nhạc nam thuộc SM ENTERTAINMENT - công ty giải trí đã cho ra mắt các superstar như BoA, TVXQ, SUPER JUNIOR, Girl's Generation, v.v.</p>
+                    <p>Cái tên này có ý nghĩa là "một ngôi sao mới từ một thế giới không xác định" và được lấy cảm hứng từ EXOplanet, có nghĩa là một hành tinh bên ngoài Hệ mặt trời.</p>
+                    <p>Ra mắt chính thức tại Hàn Quốc và Trung Quốc vào ngày 8/4/2012.</p>
+                </div>
+            </div>
+        </div>
+        <div class="members">
+            <div class="hang1">
+                <a href="https://vi.wikipedia.org/wiki/Xiumin">
+                    <img src="exoxiumin.jpg" alt="">
+                    <div>XIUMIN</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Suho">
+                    <img src="exosuho.jpg" alt="">
+                    <div>SUHO</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Tr%C6%B0%C6%A1ng_Ngh%E1%BB%87_H%C6%B0ng">
+                    <img src="exolay.jpg" alt="">
+                    <div>LAY</div>
+                </a>
+            </div>
+            <div class="hang2">
+                <a href="https://vi.wikipedia.org/wiki/Chen_(ca_s%C4%A9)">
+                    <img src="exochen.jpg" alt="">
+                    <div>CHEN</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Byun_Baek-hyun">
+                    <img src="exobaekhyun.jpg" alt="">
+                    <div>BAEKHYUN</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Park_Chanyeol">
+                    <img src="exochanyeol.jpg" alt="">
+                    <div>CHANYEOL</div>
+                </a>
+            </div>
+            <div class="hang3">
+                <a href="https://vi.wikipedia.org/wiki/D.O._(ca_s%C4%A9)">
+                    <img src="exod.o..jpg" alt="">
+                    <div>D.O.</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Kai_(ca_s%C4%A9)">
+                    <img src="exokai.jpg" alt="">
+                    <div>KAI</div>
+                </a>
+                <a href="https://vi.wikipedia.org/wiki/Oh_Sehun_(ca_s%C4%A9)">
+                    <img src="exosehun.jpg" alt="">
+                    <div>SEHUN</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="slogan">WE ARE ONE</div>
+        <div class="followus">
+            <a href="https://www.facebook.com/weareoneEXO" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/weareoneEXO" class="fa fa-twitter"></a>
+            <a href="https://www.youtube.com/channel/UCzCedBCSSltI1TFd3bKyN6g" class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/weareone.exo/" class="fa fa-instagram"></a>
+            <p>FOLLOW US</p>
+        </div>
+    </div>
+</body>
+</html>
